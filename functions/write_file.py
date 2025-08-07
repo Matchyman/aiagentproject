@@ -10,5 +10,4 @@ def write_file(working_directory, file_path, content):
             f.write(content)
     except Exception as e:
         return f'Error: Cannot read "{file_path}" as it is outside the permitted working directory'
-
-        
+    return f'Successfully wrote to "{file_path}" ({len(content)} characters written)'
