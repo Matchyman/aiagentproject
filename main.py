@@ -33,8 +33,7 @@ def main(arg, verbose):
     response = client.models.generate_content(
     model='gemini-2.0-flash-001', 
     contents=messages,
-    config=types.GenerateContentConfig(system_instruction=system_prompt),
-    tools = [available_functions]
+    config=types.GenerateContentConfig(tools = [available_functions],system_instruction=system_prompt)
     )
     if response.function_calls:
         for function_call_part in response.function_calls:
